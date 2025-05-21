@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+/* Tambahkan utilitas kustom untuk tampilan modern */
+@utility glass-effect {
+  @apply backdrop-blur-sm bg-white/10 dark:bg-gray-900/20 border border-white/20 dark:border-white/5;
+}
+
+@utility card {
+  @apply rounded-lg shadow-md p-6 glass-effect;
+}
+
+:root {
+  /* Base theme colors */
+  --background: #F5F7FA;
+  --foreground: #2A2A2A;
+  
+  /* Brand colors */
+  --color-primary: #0A2E5A;    /* Dark blue */
+  --color-accent: #FF6B35;     /* Orange */
+  --color-success: #4CAF50;    /* Green */
+  --color-danger: #E53935;     /* Red */
+  --color-light: #F5F7FA;      /* Light background */
+  --color-dark: #1A1A1A;       /* Dark text */
+}
+
+@theme inline {
+  /* Map our custom colors to Tailwind's color system */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Primary colors */
+  --color-blue-50: color-mix(in srgb, var(--color-primary) 10%, white);
+  --color-blue-100: color-mix(in srgb, var(--color-primary) 20%, white);
+  --color-blue-200: color-mix(in srgb, var(--color-primary) 30%, white);
+  --color-blue-300: color-mix(in srgb, var(--color-primary) 40%, white);
+  --color-blue-400: color-mix(in srgb, var(--color-primary) 60%, white);
+  --color-blue-500: var(--color-primary);
+  --color-blue-600: color-mix(in srgb, var(--color-primary) 85%, black);
+  --color-blue-700: color-mix(in srgb, var(--color-primary) 70%, black);
+  --color-blue-800: color-mix(in srgb, var(--color-primary) 50%, black);
+  --color-blue-900: color-mix(in srgb, var(--color-primary) 30%, black);
+  
+  /* Accent colors */
+  --color-orange-500: var(--color-accent);
+  --color-orange-600: color-mix(in srgb, var(--color-accent) 85%, black);
+  --color-orange-700: color-mix(in srgb, var(--color-accent) 70%, black);
+  
+  /* Success colors */
+  --color-green-500: var(--color-success);
+  --color-green-600: color-mix(in srgb, var(--color-success) 85%, black);
+  --color-green-700: color-mix(in srgb, var(--color-success) 70%, black);
+  
+  /* Danger colors */
+  --color-red-500: var(--color-danger);
+  --color-red-600: color-mix(in srgb, var(--color-danger) 85%, black);
+  --color-red-700: color-mix(in srgb, var(--color-danger) 70%, black);
+  
+  /* Font configuration */
+  --font-sans: var(--font-open-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121826;
+    --foreground: #F5F7FA;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter, Arial, Helvetica, sans-serif);
+}
+
+/* Custom animation for loading spinner */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+}
+
+/* Slower pulse animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Floating animation variants */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floating-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floating-reverse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+/* Glow text effect */
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
+  }
+}
+
+/* Loading bar animation */
+@keyframes loading {
+  0% {
+    width: 0%;
+    background-color: rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    background-color: rgba(59, 130, 246, 0.5);
+  }
+  100% {
+    width: 100%;
+    background-color: rgba(59, 130, 246, 0.2);
+  }
+}
+
+/* Scanner effect animation */
+@keyframes scan {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+/* Particles float animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* CTA background animation */
+@keyframes ctaBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* Additional animation classes */
+.animate-pulse-ring {
+  animation: pulse-ring 1.25s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.floating {
+  animation: floating 6s ease-in-out infinite;
+}
+
+.floating-slow {
+  animation: floating-slow 8s ease-in-out infinite;
+}
+
+.floating-reverse {
+  animation: floating-reverse 7s ease-in-out infinite;
+}
+
+.glow-text {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.transition-colors {
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-3000 {
+  transition-duration: 3000ms;
+}
+
+/* Loading bar styles */
+.loading-bar {
+  animation: loading 3s ease-in-out infinite;
+}
+
+.loading-delay-1 {
+  animation-delay: 0.5s;
+}
+
+.loading-delay-2 {
+  animation-delay: 1s;
+}
+
+/* Scanner overlay effect */
+.scanning-overlay {
+  transition: opacity 0.5s ease;
+}
+
+.scanning-overlay.scanning {
+  animation: scan 2s ease-in-out;
+}
+
+/* CTA background animation */
+.cta-bg-animation {
+  background: linear-gradient(
+    -45deg, 
+    rgba(10, 46, 90, 0.7), 
+    rgba(59, 130, 246, 0.7), 
+    rgba(30, 58, 138, 0.7), 
+    rgba(255, 107, 53, 0.5)
+  );
+  background-size: 400% 400%;
+  animation: ctaBg 15s ease infinite;
+}
+
+/* Typing animation for headings */
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink .75s step-end infinite;
+}
+
+/* Scan line effect */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #3B82F6, transparent);
+  opacity: 0.7;
+  z-index: 10;
+  animation: scan 2s linear infinite;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.8);
+}
+
+/* Scrollbar custom styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500 hover:bg-blue-600 rounded-full;
+}
+
+/* Custom text selection */
+::selection {
+  @apply bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200;
+}
