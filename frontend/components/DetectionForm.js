@@ -159,7 +159,7 @@ export default function DetectionForm() {
             <p className="text-sm text-gray-600 dark:text-gray-400">Deteksi Retinopati Diabetik</p>
           </div>
           <div className={`${colors.text} font-semibold px-3 py-1 rounded-full bg-white/80 dark:bg-black/20 text-sm`}>
-            {confidencePercent}% akurat
+            {confidencePercent} Tingkat Kepercayaan
           </div>
         </div>
         
@@ -307,7 +307,7 @@ export default function DetectionForm() {
                     onClick={() => fileInputRef.current?.click()}
                     className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 dark:text-blue-100 dark:bg-blue-900/50 dark:hover:bg-blue-900/70 transition-colors duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   >
-                    {previewUrl ? 'Ganti Gambar' : 'Pilih Gambar'}
+                    {previewUrl ? 'Upload' : 'Pilih Gambar'}
                   </button>
                 </div>
               </div>

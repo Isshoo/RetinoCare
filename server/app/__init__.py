@@ -35,6 +35,9 @@ def create_app():
     # Import models (after db is defined but before creating tables)
     from app.models.user import User
     from app.models.detection_result import DetectionResult
+    
+    with app.app_context():
+         db.create_all()
 
     # Register blueprint
     from app.routes import bp
