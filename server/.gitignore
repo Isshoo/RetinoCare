@@ -138,6 +138,7 @@ venv.bak/
 
 # Storage
 app/uploads/
+model/versions/
 
 # Spyder project settings
 .spyderproject
