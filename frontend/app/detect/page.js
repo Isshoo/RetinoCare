@@ -59,7 +59,7 @@ export default function DetectPage() {
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl -z-10"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-full blur-xl -z-10"></div>
 
-            <div className="relative p-1 rounded-2xl bg-gradient-to-r from-blue-500 via-blue-400 to-accent">
+            <div className="relative p-1 rounded-2xl bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 shadow-md">
               <div className="absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-900 rounded-2xl opacity-80 backdrop-blur-sm -z-10"></div>
               <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-xl">
                 <DetectionForm />

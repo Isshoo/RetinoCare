@@ -1,14 +1,13 @@
 # server/app/utils/prediction.py
-import numpy as np
 import os
+import numpy as np
 from keras.models import load_model
-from keras.utils import load_img, img_to_array
-from PIL import Image # Pillow
-from flask import current_app
+from keras.utils import img_to_array
+from PIL import Image 
 
 # --- Configuration ---
-BASE_DIR    = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
-MODEL_DIR   = os.path.join(BASE_DIR, 'model')
+BASE_DIR    = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+MODEL_DIR   = os.path.join(BASE_DIR, 'storage', 'saved_models')
 MODEL_NAME  = 'model.h5'
 MODEL_PATH  = os.path.join(MODEL_DIR, MODEL_NAME)
 

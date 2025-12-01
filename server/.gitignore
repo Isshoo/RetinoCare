@@ -139,7 +139,7 @@ env.bak/
 venv.bak/
 
 # Storage
-app/uploads/
+app/storage/uploads/
 model/versions/
 images/testing/
 

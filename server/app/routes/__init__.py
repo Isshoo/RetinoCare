@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint
 
 bp = Blueprint('main', __name__, url_prefix='/api')
 
@@ -16,8 +16,8 @@ def handle_options_upload():
     return '', 200
 
 # Make sure all your other routes are registered below
-from app.views.auth import register, login, logout, refresh
-from app.views.detection import upload_image
+from app.controllers.auth import register, login, logout, refresh
+from app.controllers.detection import upload_image
 
 bp.route('/auth/register', methods=['POST'])(register)
 bp.route('/auth/login', methods=['POST'])(login)

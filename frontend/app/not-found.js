@@ -81,13 +81,13 @@ export default function NotFound() {
         <div className="text-center relative z-10">
           {/* 404 Number with Animation */}
           <motion.div
-            className="relative mb-8"
+            className="relative mb-4"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
           >
             <div className="relative inline-block">
-              <h1 className="text-[150px] md:text-[200px] lg:text-[250px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-orange-400 to-blue-400 leading-none glow-text">
+              <h1 className="text-[150px]  font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-orange-400 to-blue-400 leading-none glow-text">
                 404
               </h1>
               <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-r from-blue-500 to-orange-500"></div>
@@ -96,7 +96,7 @@ export default function NotFound() {
 
           {/* Icon with Pulse Animation */}
           <motion.div
-            className="mb-8 flex justify-center"
+            className="mb-10 flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -106,7 +106,7 @@ export default function NotFound() {
               <div className="relative bg-blue-800/40 backdrop-blur-sm border border-blue-700/50 rounded-full p-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16 text-orange-400"
+                  className="size-12 text-orange-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -162,13 +162,13 @@ export default function NotFound() {
               <div className="absolute inset-0 w-0 bg-gradient-to-r from-orange-600 to-orange-500 transition-all duration-300 group-hover:w-full"></div>
             </Link>
 
-            <Link
+            {/* <Link
               href="/detect"
               className="relative px-8 py-4 border border-blue-400 hover:border-blue-300 text-blue-100 hover:text-white rounded-lg transition-all duration-300 overflow-hidden group"
             >
               <span className="relative z-10">Mulai Deteksi</span>
               <span className="absolute inset-0 w-0 bg-blue-700/30 transition-all duration-500 ease-out group-hover:w-full"></span>
-            </Link>
+            </Link> */}
           </motion.div>
 
           {/* Helpful Links */}
@@ -181,8 +181,8 @@ export default function NotFound() {
             <h3 className="text-lg font-semibold mb-4 text-blue-200">
               Mungkin Anda mencari:
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* <Link
                 href="/"
                 className="group p-4 rounded-lg bg-blue-700/20 hover:bg-blue-700/40 border border-blue-600/30 hover:border-blue-500/50 transition-all duration-300"
               >
@@ -203,7 +203,7 @@ export default function NotFound() {
                 <p className="text-sm text-blue-200 group-hover:text-white transition-colors">
                   Beranda
                 </p>
-              </Link>
+              </Link> */}
 
               <Link
                 href="/detect"

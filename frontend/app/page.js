@@ -533,7 +533,10 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="flex-1 md:flex md:justify-end" data-aos="fade-left">
+            <div
+              className="hidden flex-1 md:flex md:justify-end"
+              data-aos="fade-left"
+            >
               <div className="relative w-full max-w-[220px] aspect-square">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-orange-500 to-blue-500 animate-pulse-ring"></div>
                 <div className="absolute inset-2 rounded-full bg-blue-900 flex items-center justify-center text-center">

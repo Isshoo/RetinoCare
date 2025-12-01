@@ -19,15 +19,15 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row overflow-hidden">
+    <div className="relative min-h-screen w-full overflow-hidden flex">
       {/* Left side decorative panel - visible only on medium screens and up */}
-      <div className="hidden md:flex md:w-1/3 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+      <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/3 left-1/4 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
           <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-white/10 rounded-full blur-xl"></div>
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-12">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full w-full text-white ">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 dark:text-white">
             RetinoCare
           </h2>
           <p className="text-lg text-white/90 text-center">
@@ -67,7 +67,7 @@ export default function RegisterPage() {
                 />
               </svg>
             </div>
-            <h1 className="text-3xl font-bold text-blue-700 dark:text-blue-400">
+            <h1 className="text-3xl font-bold text-blue-700 dark:text-white">
               Daftar Akun
             </h1>
           </div>
