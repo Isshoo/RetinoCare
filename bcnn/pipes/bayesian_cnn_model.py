@@ -2,6 +2,11 @@ import tensorflow as tf
 import tensorflow_probability as tfp
 from tensorflow.keras import layers, models
 import numpy as np
+import ssl
+import certifi
+
+# Fix SSL certificate verification untuk macOS
+ssl._create_default_https_context = ssl._create_unverified_context
 
 tfd = tfp.distributions
 tfpl = tfp.layers
@@ -178,7 +183,7 @@ def create_callbacks(model_name='bayesian_cnn'):
     callbacks = [
         # Model checkpoint
         tf.keras.callbacks.ModelCheckpoint(
-            f'storage/bcnn/models/{model_name}_best.keras',
+            f'models/{model_name}_best.keras',
             monitor='val_accuracy',
             save_best_only=True,
             mode='max',
@@ -204,13 +209,13 @@ def create_callbacks(model_name='bayesian_cnn'):
         
         # TensorBoard
         tf.keras.callbacks.TensorBoard(
-            log_dir=f'storage/bcnn/logs/{model_name}',
+            log_dir=f'logs/{model_name}',
             histogram_freq=1
         ),
         
         # CSV Logger
         tf.keras.callbacks.CSVLogger(
-            f'storage/bcnn/logs/{model_name}_training.csv'
+            f'logs/{model_name}_training.csv'
         )
     ]
     
