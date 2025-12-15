@@ -146,6 +146,8 @@ app/storage/uploads/
 model/versions/
 images/testing/
 
+uploads/
+
 # Spyder project settings
 .spyderproject
 .spyproject
