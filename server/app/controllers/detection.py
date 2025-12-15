@@ -1,10 +1,10 @@
-from flask import request, jsonify, current_app
-from app.models.detection_result import DetectionResult
-from app.utils.prediction import predict_image
 import os
+from flask import request, jsonify, current_app
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from app import db
-from app.models.user import User
+from app.database.models.user import User
+from app.database.models.detection_result import DetectionResult
+from app.services.prediction import predict_image
 
 @jwt_required()
 def upload_image():
@@ -31,7 +31,7 @@ def upload_image():
         return jsonify({"error": "Pengguna tidak ditemukan"}), 404
     
     # Make sure upload folder exists
-    upload_folder = os.path.join(current_app.root_path, 'uploads')
+    upload_folder = os.path.join(current_app.root_path, 'storage', 'uploads')
     if not os.path.exists(upload_folder):
         os.makedirs(upload_folder)
     

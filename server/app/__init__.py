@@ -33,8 +33,8 @@ def create_app():
     jwt.init_app(app)
 
     # Import models (after db is defined but before creating tables)
-    from app.models.user import User
-    from app.models.detection_result import DetectionResult
+    from app.database.models.user import User
+    from app.database.models.detection_result import DetectionResult
     
     with app.app_context():
          db.create_all()
@@ -48,5 +48,5 @@ def create_app():
 # For Flask-Login
 @login_manager.user_loader
 def load_user(user_id):
-    from app.models.user import User  # Import User here to avoid circular imports
+    from app.database.models.user import User  # Import User here to avoid circular imports
     return User.query.get(int(user_id))

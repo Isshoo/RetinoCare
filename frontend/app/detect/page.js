@@ -12,9 +12,13 @@ export default function DetectPage() {
 
   useEffect(() => {
     if (!isAuthenticated()) {
-      router.push("/");
+      router.push("/login");
     }
   }, [router]);
+
+  if (!isAuthenticated()) {
+    return null;
+  }
 
   return (
     <>
@@ -55,7 +59,7 @@ export default function DetectPage() {
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl -z-10"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-full blur-xl -z-10"></div>
 
-            <div className="relative p-1 rounded-2xl bg-gradient-to-r from-blue-500 via-blue-400 to-accent">
+            <div className="relative p-1 rounded-2xl bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 shadow-md">
               <div className="absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-900 rounded-2xl opacity-80 backdrop-blur-sm -z-10"></div>
               <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-xl">
                 <DetectionForm />
@@ -63,7 +67,7 @@ export default function DetectPage() {
             </div>
 
             {/* Info cards */}
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <div className="grid md:grid-cols-2 gap-6 mt-12">
               {[
                 {
                   icon: (
@@ -72,7 +76,8 @@ export default function DetectPage() {
                       className="h-7 w-7"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke="currentColor">
+                      stroke="currentColor"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -92,7 +97,8 @@ export default function DetectPage() {
                       className="h-7 w-7"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke="currentColor">
+                      stroke="currentColor"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -104,30 +110,32 @@ export default function DetectPage() {
                   title: "Analisis Cepat",
                   description: "Hasil deteksi retinopati dalam hitungan detik",
                 },
-                {
-                  icon: (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-7 w-7"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                      />
-                    </svg>
-                  ),
-                  title: "Rekam Medis",
-                  description:
-                    "Riwayat hasil deteksi tersimpan dalam akun Anda",
-                },
+                // {
+                //   icon: (
+                //     <svg
+                //       xmlns="http://www.w3.org/2000/svg"
+                //       className="h-7 w-7"
+                //       fill="none"
+                //       viewBox="0 0 24 24"
+                //       stroke="currentColor"
+                //     >
+                //       <path
+                //         strokeLinecap="round"
+                //         strokeLinejoin="round"
+                //         strokeWidth={1.5}
+                //         d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                //       />
+                //     </svg>
+                //   ),
+                //   title: "Rekam Medis",
+                //   description:
+                //     "Riwayat hasil deteksi tersimpan dalam akun Anda",
+                // },
               ].map((card, index) => (
                 <div
                   key={index}
-                  className="relative overflow-hidden group rounded-xl p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-100 dark:border-gray-700 shadow-lg">
+                  className="relative overflow-hidden group rounded-xl p-6 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-100 dark:border-gray-700 shadow-lg"
+                >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="absolute -bottom-1.5 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
